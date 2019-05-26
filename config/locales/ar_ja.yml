@@ -1,0 +1,35 @@
+---
+ja:
+  activerecord:
+    models:
+      book: 書籍
+    attributes:
+      book:
+        id: ID
+        title: タイトル
+        memo: メモ
+        author: 著者
+        created_at: 登録日時
+        updated_at: 更新日時
+  books:
+    back: 戻る
+    index:
+      title: 書籍一覧
+      new_book: 登録
+      destroy: 削除
+      edit: 編集
+      show: 詳細
+      confirm: "本当によろしいですか?"
+    new:
+      new_book: 書籍を登録
+    show:
+      edit: 編集
+    edit:
+      edit_book: 書籍の編集
+      show: 詳細
+    create:
+      notice: "書籍が保存されました"
+    update:
+      notice: "書籍が更新されました"
+    destroy:
+      notice: "書籍が削除されました"
