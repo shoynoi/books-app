@@ -9,6 +9,7 @@ en:
         title: Title
         memo: Memo
         author: Author
+        picture: Picture
         created_at: Created at
         updated_at: Updated at
   books:
