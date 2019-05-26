@@ -5,6 +5,7 @@ table
     tr
       th Title
       th Memo
+      th Author
       th
       th
       th
@@ -14,6 +15,7 @@ table
       tr
         td = book.title
         td = book.memo
+        td = book.author
         td = link_to 'Show', book
         td = link_to 'Edit', edit_book_path(book)
         td = link_to 'Destroy', book, data: { confirm: 'Are you sure?' }, method: :delete

@@ -6,7 +6,9 @@ p
 p
   strong Memo:
   = @book.memo
-
+p
+  strong Author:
+  = @book.author
 => link_to 'Edit', edit_book_path(@book)
 '|
 =< link_to 'Back', books_path
