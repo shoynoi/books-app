@@ -1,12 +1,14 @@
-h1 Listing books
+p#notice = notice
+
+h1 = t ".title"
 
 table
   thead
     tr
-      th Title
-      th Memo
-      th Author
-      th Picture
+      th = Book.human_attribute_name(:title)
+      th = Book.human_attribute_name(:memo)
+      th = Book.human_attribute_name(:author)
+      th = Book.human_attribute_name(:picture)
       th
       th
       th
@@ -18,10 +20,10 @@ table
         td = book.memo
         td = book.author
         td = book.picture
-        td = link_to 'Show', book
-        td = link_to 'Edit', edit_book_path(book)
-        td = link_to 'Destroy', book, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to t(".show"), book
+        td = link_to t(".edit"), edit_book_path(book)
+        td = link_to t(".destroy"), book, data: { confirm: t(".confirm") }, method: :delete
 
 br
 
-= link_to 'New Book', new_book_path
+= link_to t(".new_book"), new_book_path
