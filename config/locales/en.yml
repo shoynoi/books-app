@@ -15,7 +15,7 @@ en:
   books:
     back: Back
     index:
-      title: Title
+      title: Book List
       new_book: New book
       destroy: Destroy
       edit: Edit
@@ -34,3 +34,25 @@ en:
       notice: "Book was successfully updated."
     destroy:
       notice: "Book was successfully destroyed."
+  reports:
+    back: back
+    index:
+      title: Report List
+      new_report: New Report
+      destroy: Delete
+      edit: Edit
+      show: Show
+      confirm: "Are you sure?"
+    new:
+      new_report: New Report
+    show:
+      edit: Edit
+    edit:
+      edit_report: Editing Report
+      show: Show
+    create:
+      notice: "Report was successfully created."
+    update:
+      notice: "Report was successfully updated."
+    destroy:
+      notice: "Report was successfully destroyed."

@@ -16,6 +16,7 @@ ja:
   activerecord:
     models:
       book: 書籍
+      report: 日報
     attributes:
       book:
         id: ID
@@ -23,6 +24,13 @@ ja:
         memo: メモ
         author: 著者
         picture: 画像
+        created_at: 登録日時
+        updated_at: 更新日時
+      report:
+        id: ID
+        title: タイトル
+        description: 内容
+        reported_on: 作業日
         created_at: 登録日時
         updated_at: 更新日時
   books:
@@ -47,3 +55,25 @@ ja:
       notice: "書籍が更新されました"
     destroy:
       notice: "書籍が削除されました"
+  reports:
+    back: 戻る
+    index:
+      title: 日報一覧
+      new_report: 日報作成
+      destroy: 削除
+      edit: 編集
+      show: 詳細
+      confirm: "本当によろしいですか?"
+    new:
+      new_report: 日報作成
+    show:
+      edit: 編集
+    edit:
+      edit_report: 内容修正
+      show: 詳細
+    create:
+      notice: "日報が作成されました"
+    update:
+      notice: "日報が更新されました"
+    destroy:
+      notice: "日報が削除されました"
