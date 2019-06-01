@@ -1,8 +1,8 @@
 header.header
   .header-books
-    = link_to "書籍", books_path
+    = link_to Book.model_name.human, books_path
   .header-reports
-    = link_to "日報", reports_url
+    = link_to Report.model_name.human, reports_url
   .header-display-lang
     - if I18n.locale.to_s == "en"
       = link_to "日本語", locale: "ja"

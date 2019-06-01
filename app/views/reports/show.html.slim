@@ -10,8 +10,8 @@
     strong = "#{Report.human_attribute_name(:description)}:"
     = simple_format(h(@report.description), {}, sanitize: false)
 
-=> link_to t(".edit"), edit_report_path(@report)
+=> link_to t("edit"), edit_report_path(@report)
 '|
-=< link_to t("reports.back"), reports_path
+=< link_to t("back"), reports_path
 
 = render "comments/comments", comments: @report.comments.order(:created_at)

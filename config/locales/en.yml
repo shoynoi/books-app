@@ -1,58 +1,62 @@
 ---
 en:
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M"
   activerecord:
     models:
-      book: book
+      book: Book
+      report: Report
+      comment: Comment
     attributes:
       book:
         id: ID
-        title: Title
+        book_list: Title
         memo: Memo
         author: Author
         picture: Picture
         created_at: Created at
         updated_at: Updated at
+      report:
+        id: ID
+        title: Title
+        description: Content
+        reported_on: Working day
+        created_at: Created at
+        updated_at: Updated at
+      comment:
+        id: ID
+        description: Comment
+        created_at: Post date
+        updated_at: Updated at
+  back: Back
+  show: Show
+  edit: Edit
+  destroy: Destroy
+  confirm: Are you sure?
+  flash:
+    create: "%{resource} was successfully created."
+    update: "%{resource} was successfully updated."
+    destroy: "%{resource} was successfully destroyed."
   books:
-    back: Back
     index:
-      title: Book List
+      book_list: Book List
       new_book: New book
-      destroy: Destroy
-      edit: Edit
-      show: Show
-      confirm: Are you sure?
     new:
       new_book: New book
-    show:
-      edit: Edit
     edit:
-      edit_book: Editing book
-      show: Show
-    create:
-      notice: "Book was successfully created."
-    update:
-      notice: "Book was successfully updated."
-    destroy:
-      notice: "Book was successfully destroyed."
+      edit_book: Edit book
   reports:
-    back: back
     index:
-      title: Report List
+      report_list: Report List
       new_report: New Report
-      destroy: Delete
-      edit: Edit
-      show: Show
-      confirm: "Are you sure?"
     new:
       new_report: New Report
-    show:
-      edit: Edit
     edit:
-      edit_report: Editing Report
-      show: Show
-    create:
-      notice: "Report was successfully created."
-    update:
-      notice: "Report was successfully updated."
-    destroy:
-      notice: "Report was successfully destroyed."
+      edit_report: Edit Report
+  comments:
+    comments: Comments
+    edit:
+      edit_comment: Edit Comment
+    new:
+      new_comment: New Comment

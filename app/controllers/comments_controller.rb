@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      redirect_to @comment.commentable, notice: "コメントを投稿しました"
+      redirect_to @comment.commentable, notice: t("flash.create", resource: t("activerecord.models.comment"))
     else
       render :new
     end
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to @comment.commentable, notice: "コメントを更新しました"
+      redirect_to @comment.commentable, notice: t("flash.update", resource: t("activerecord.models.comment"))
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @comment.commentable, notice: "コメントを削除しました"
+    redirect_to @comment.commentable, notice: t("flash.destroy", resource: t("activerecord.models.comment"))
   end
 
   private

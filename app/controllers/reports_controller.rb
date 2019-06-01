@@ -24,7 +24,7 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
 
     if @report.save
-      redirect_to @report, notice: t(".notice")
+      redirect_to @report, notice: t("flash.create", resource: t("activerecord.models.report"))
     else
       render :new
     end
@@ -33,7 +33,7 @@ class ReportsController < ApplicationController
   # PATCH/PUT /reports/1
   def update
     if @report.update(report_params)
-      redirect_to @report, notice: t(".notice")
+      redirect_to @report, notice: t("flash.update", resource: t("activerecord.models.report"))
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class ReportsController < ApplicationController
   # DELETE /reports/1
   def destroy
     @report.destroy
-    redirect_to reports_url, notice: t(".notice")
+    redirect_to reports_url, notice: t("flash.destroy", resource: t("activerecord.models.report"))
   end
 
   private

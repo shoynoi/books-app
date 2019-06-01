@@ -12,8 +12,8 @@
   .book-image
     strong = "#{Book.human_attribute_name(:picture)}:"
     = image_tag(@book.picture_url) if @book.picture.present?
-=> link_to t(".edit"), edit_book_path(@book)
+=> link_to t("edit"), edit_book_path(@book)
 '|
-=< link_to t("books.back"), books_path
+=< link_to t("back"), books_path
 
 = render "comments/comments", comments: @book.comments.order(:created_at)

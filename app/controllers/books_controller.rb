@@ -24,7 +24,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to @book, notice: t(".notice")
+      redirect_to @book, notice: t("flash.create", resource: t("activerecord.models.book"))
     else
       render :new
     end
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   def update
     if @book.update(book_params)
-      redirect_to @book, notice: t(".notice")
+      redirect_to @book, notice: t("flash.update", resource: t("activerecord.models.book"))
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class BooksController < ApplicationController
   # DELETE /books/1
   def destroy
     @book.destroy
-    redirect_to books_url, notice: t(".notice")
+    redirect_to books_url, notice: t("flash.destroy", resource: t("activerecord.models.book"))
   end
 
   private
