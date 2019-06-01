@@ -1,11 +1,5 @@
 = form_for @report do |f|
-  - if @report.errors.any?
-    #error_explanation
-      h2 = "#{t("errors.template.header.other", count: @report.errors.count, model: Report.model_name.human)}:"
-      ul
-        - @report.errors.full_messages.each do |message|
-          li = message
-
+  = render "shared/error_messages", object: @report
   .field
     = f.label Report.human_attribute_name(:title)
     = f.text_field :title

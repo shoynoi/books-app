@@ -1,16 +1,8 @@
 = form_with model: comment, local: true do |f|
   = f.hidden_field :commentable_id
   = f.hidden_field :commentable_type
-
-  - if comment.errors.any?
-    #error_explanation
-      h2 = "#{t("errors.template.header.other", count: comment.errors.count, model: comment.model_name.human)}:"
-      ul
-        - comment.errors.full_messages.each do |message|
-          li = message
-
+  = render "shared/error_messages", object: comment
   .field
     = f.label :description
     = f.text_area :description, rows: 7, required: true
-
   .actions = f.submit
