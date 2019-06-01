@@ -1,0 +1,4 @@
+h2 コメント
+
+= render partial: "comments/comment", collection: comments.order(:created_at), as: :comment
+= render "comments/form", comment: comments.new

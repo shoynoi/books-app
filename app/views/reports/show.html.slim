@@ -13,3 +13,5 @@ p
 => link_to t(".edit"), edit_report_path(@report)
 '|
 =< link_to t("reports.back"), reports_path
+
+= render "comments/comments", comments: @report.comments.order(:created_at)
