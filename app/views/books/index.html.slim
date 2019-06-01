@@ -26,4 +26,8 @@ table
 
 br
 
+.pagination_bottom
+  = paginate @books
+  = page_entries_info @books
+
 = link_to t(".new_book"), new_book_path
