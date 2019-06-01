@@ -1,17 +1,18 @@
 p#notice = notice
 
-p
-  strong = "#{Book.human_attribute_name(:title)}:"
-  = @book.title
-p
-  strong = "#{Book.human_attribute_name(:memo)}:"
-  = @book.memo
-p
-  strong = "#{Book.human_attribute_name(:author)}:"
-  = @book.author
-p
-  strong = "#{Book.human_attribute_name(:picture)}:"
-  = image_tag(@book.picture_url) if @book.picture.present?
+.book
+  .book-title
+    strong = "#{Book.human_attribute_name(:title)}:"
+    = @book.title
+  .book-memo
+    strong = "#{Book.human_attribute_name(:memo)}:"
+    = @book.memo
+  .book-author
+    strong = "#{Book.human_attribute_name(:author)}:"
+    = @book.author
+  .book-image
+    strong = "#{Book.human_attribute_name(:picture)}:"
+    = image_tag(@book.picture_url) if @book.picture.present?
 => link_to t(".edit"), edit_book_path(@book)
 '|
 =< link_to t("books.back"), books_path

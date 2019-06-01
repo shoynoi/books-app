@@ -1,6 +1,7 @@
 = form_with model: comment, local: true do |f|
   = f.hidden_field :commentable_id
   = f.hidden_field :commentable_type
+
   - if comment.errors.any?
     #error_explanation
       h2 = "#{t("errors.template.header.other", count: comment.errors.count, model: comment.model_name.human)}:"
@@ -9,7 +10,7 @@
           li = message
 
   .field
-    = f.label "コメント"
-    = f.text_area :description, required: true
+    = f.label :description
+    = f.text_area :description, rows: 7, required: true
 
   .actions = f.submit

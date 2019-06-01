@@ -1,7 +1,11 @@
-div
-  = comment.description
-  = l comment.updated_at
-  => link_to "編集", edit_comment_path(comment)
-  '|
-  =< link_to "削除", comment, data: { confirm: "本当によろしいですか?" }, method: :delete
+.comment
+  .comment-body
+    = simple_format(h(comment.description), {}, sanitize: false)
+  footer.comment-footer
+    .comment-time
+      = l comment.updated_at
+    .comment-actions
+      => link_to "編集", edit_comment_path(comment)
+      '|
+      =< link_to "削除", comment, data: { confirm: "本当によろしいですか?" }, method: :delete
 

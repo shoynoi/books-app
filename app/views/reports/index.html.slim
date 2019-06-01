@@ -14,7 +14,7 @@ table
     - @reports.each do |report|
       tr
         td = report.title
-        td = report.description
+        td = truncate("#{report.description}", length: 50)
         td = report.reported_on
         td = link_to t(".show"), report
         td = link_to t(".edit"), edit_report_path(report)
