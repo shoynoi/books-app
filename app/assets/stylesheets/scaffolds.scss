@@ -143,3 +143,27 @@ textarea {
 .header-books {
   margin-right: 0.5rem;
 }
+
+.users {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  flex: 0 0 33%;
+  border-bottom: 1px solid #9da4a7;
+  margin-right: 1rem;
+  padding: 0.5rem 0;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user-name-link {
+  text-decoration: none;
+}
+
+
+

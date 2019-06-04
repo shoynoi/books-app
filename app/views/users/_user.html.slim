@@ -1,0 +1,4 @@
+.user
+  .user-name = link_to user.name, user_path(user), class: "user-name-link"
+  div = user.email
+  p = truncate(user.biography, length: 200)
