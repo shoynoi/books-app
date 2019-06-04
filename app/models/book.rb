@@ -4,4 +4,5 @@ class Book < ApplicationRecord
   validates :memo, presence: true
   paginates_per 10
   has_many :comments, as: :commentable, dependent: :destroy
+  belongs_to :user
 end
