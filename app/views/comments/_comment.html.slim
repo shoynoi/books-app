@@ -2,6 +2,8 @@
   .comment-body
     = simple_format(h(comment.description), {}, sanitize: false)
   footer.comment-footer
+    .comment-user
+      = link_to comment.user.name, comment.user
     .comment-time
       = l comment.updated_at
     .comment-actions
