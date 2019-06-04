@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = current_user.comments.new(comment_params)
 
     if @comment.save
       redirect_to @comment.commentable, notice: t("flash.create", resource: t("activerecord.models.comment"))
@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
   private
 
   def set_comment
-    @comment = Comment.find(params[:id])
+    @comment = current_user.comments.find(params[:id])
   end
 
   def comment_params

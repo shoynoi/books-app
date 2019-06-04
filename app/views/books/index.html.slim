@@ -20,8 +20,9 @@ table
         td = book.author
         td = truncate("#{book.picture}", length: 30)
         td = link_to t("show"), book
-        td = link_to t("edit"), edit_book_path(book)
-        td = link_to t("destroy"), book, data: { confirm: t("confirm") }, method: :delete
+        - if current_user == book.user
+          td = link_to t("edit"), edit_book_path(book)
+          td = link_to t("destroy"), book, data: { confirm: t("confirm") }, method: :delete
 
 br
 

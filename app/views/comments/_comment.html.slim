@@ -5,7 +5,8 @@
     .comment-time
       = l comment.updated_at
     .comment-actions
-      => link_to t("edit"), edit_comment_path(comment)
-      '|
-      =< link_to t("destroy"), comment, data: { confirm: t("confirm") }, method: :delete
+      - if current_user == comment.user
+        => link_to t("edit"), edit_comment_path(comment)
+        '|
+        =< link_to t("destroy"), comment, data: { confirm: t("confirm") }, method: :delete
 
