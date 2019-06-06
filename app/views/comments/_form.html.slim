@@ -1,7 +1,7 @@
 = form_with model: comment, local: true do |f|
   = f.hidden_field :commentable_id
   = f.hidden_field :commentable_type
-  = render "shared/error_messages", object: comment
+  = render "error_messages", object: comment
   .field
     = f.label :description
     = f.text_area :description, rows: 7, required: true
