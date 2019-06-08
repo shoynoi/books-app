@@ -1,4 +1,4 @@
-h1 ユーザー一覧
+h1 = t(".users")
 
 .users
   = render partial: "users/user", collection: @users.order(updated_at: :desc), as: :user
