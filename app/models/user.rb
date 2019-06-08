@@ -9,9 +9,9 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :biography, presence: true
-  has_many :books
-  has_many :reports
-  has_many :comments
+  has_many :books, dependent: :destroy
+  has_many :reports, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def postcode1
     @postcode1 ||= postcode.present? ? postcode.split("-").first : nil
