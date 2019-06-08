@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :reports, dependent: :destroy
   has_many :comments, dependent: :destroy
+  paginates_per 10
 
   def postcode1
     @postcode1 ||= postcode.present? ? postcode.split("-").first : nil
