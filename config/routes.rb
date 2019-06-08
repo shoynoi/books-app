@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :books
     resources :reports
     resources :comments, except: [:index, :show]
-    root to: "books#index"
   end
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
