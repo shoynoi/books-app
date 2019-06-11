@@ -27,8 +27,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @commentable = @comment.commentable
     @comment.destroy
-    redirect_to @comment.commentable, notice: t("flash.destroy", resource: t("activerecord.models.comment"))
+    redirect_to @commentable, notice: t("flash.destroy", resource: t("activerecord.models.comment"))
   end
 
   private
