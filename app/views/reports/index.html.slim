@@ -1,4 +1,3 @@
-= render "flash"
 h1 = t(".report_list")
 
 table
@@ -7,6 +6,7 @@ table
       th = Report.human_attribute_name(:title)
       th = Report.human_attribute_name(:description)
       th = Report.human_attribute_name(:reported_on)
+      th = User.human_attribute_name(:name)
       th
       th
       th
@@ -17,9 +17,11 @@ table
         td = report.title
         td = truncate("#{report.description}", length: 50)
         td = report.reported_on
+        td = link_to report.user.name, report.user
         td = link_to t("show"), report
-        td = link_to t("edit"), edit_report_path(report)
-        td = link_to t("destroy"), report, data: { confirm: t("confirm") }, method: :delete
+        - if current_user == report.user
+          td = link_to t("edit"), edit_report_path(report)
+          td = link_to t("destroy"), report, data: { confirm: t("confirm") }, method: :delete
 
 br
 

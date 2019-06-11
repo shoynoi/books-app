@@ -42,6 +42,11 @@ ja:
         description: コメント
         created_at: 投稿日時
         updated_at: 更新日時
+      user:
+        name: ユーザー名
+        postcode: 郵便番号
+        address: 住所
+        biography: 自己紹介
   back: 戻る
   show: 詳細
   edit: 編集
@@ -73,3 +78,9 @@ ja:
       edit_comment: コメント編集
     new:
       new_comment: コメント投稿
+  users:
+    index:
+      users: ユーザー一覧
+    show:
+      profile: プロフィール
+      edit: 登録情報変更

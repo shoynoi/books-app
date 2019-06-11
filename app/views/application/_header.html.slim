@@ -1,10 +1,24 @@
 header.header
-  .header-books
-    = link_to Book.model_name.human, books_path
-  .header-reports
-    = link_to Report.model_name.human, reports_url
-  .header-display-lang
-    - if I18n.locale.to_s == "en"
-      = link_to "日本語", locale: "ja"
+  .header-items-left
+    .header-item
+      - if Rails.env.development?
+        = link_to "メール", letter_opener_web_path
+    - if user_signed_in?
+      .header-item
+        = link_to Book.model_name.human, books_path
+      .header-item
+        = link_to Report.model_name.human, reports_url
+      .header-item
+        = link_to User.model_name.human, users_url
+  .header-items-right
+    - if user_signed_in?
+      .header-item
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
     - else
-      = link_to "English", locale: "en"
+      .header-item
+        = link_to "ログイン", new_user_session_path
+    .header-item
+      - if I18n.locale.to_s == "en"
+        = link_to "日本語", locale: "ja"
+      - else
+        = link_to "English", locale: "en"

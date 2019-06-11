@@ -3,4 +3,5 @@ class Report < ApplicationRecord
   validates :description, presence: true
   has_many :comments, as: :commentable, dependent: :destroy
   paginates_per 10
+  belongs_to :user
 end

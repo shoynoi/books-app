@@ -1,0 +1,19 @@
+h1 = t(".profile")
+
+table
+  tbody
+    tr
+      th= User.human_attribute_name(:name)
+      td= @user.name
+    tr
+      th= User.human_attribute_name(:email)
+      td= @user.email
+    tr
+      th= User.human_attribute_name(:postcode)
+      td= @user.postcode
+    tr
+      th= User.human_attribute_name(:address)
+      td= @user.address
+.user-description
+  = simple_format(h(@user.biography), {}, sanitize: false)
+= link_to t(".edit"), edit_user_registration_path if @user == current_user

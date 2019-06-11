@@ -29,6 +29,11 @@ en:
         description: Comment
         created_at: Post date
         updated_at: Updated at
+      user:
+        name: Name
+        postcode: Postcode
+        address: Address
+        biography: Biography
   back: Back
   show: Show
   edit: Edit
@@ -60,3 +65,9 @@ en:
       edit_comment: Edit Comment
     new:
       new_comment: New Comment
+  users:
+    index:
+      users: Users
+    show:
+      profile: Profile
+      edit: Edit User

@@ -1,0 +1,33 @@
+h2 = t(".sign_up")
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :name
+    = f.text_field :name, autofocus: true
+  .field
+    = f.label :email
+    = f.email_field :email, autocomplete: "email"
+  .field
+    = f.label :postcode
+    = f.text_field :postcode1, size: 3, maxlength: 3, id: "user_postcode", placeholder: "111"
+    | -
+    = f.text_field :postcode2, size: 4, maxlength: 4, placeholder: "1111"
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :biography
+    = f.text_area :biography, rows: 10
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      em = t("devise.shared.minimum_password_length", count: @minimum_password_length)
+    br
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    br
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit t(".sign_up")
+= render "devise/shared/links"
