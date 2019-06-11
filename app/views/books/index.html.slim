@@ -1,6 +1,5 @@
-p#notice = notice
-
-h1 = t ".title"
+= render "flash"
+h1 = t ".book_list"
 
 table
   thead
@@ -19,10 +18,10 @@ table
         td = book.title
         td = book.memo
         td = book.author
-        td = book.picture
-        td = link_to t(".show"), book
-        td = link_to t(".edit"), edit_book_path(book)
-        td = link_to t(".destroy"), book, data: { confirm: t(".confirm") }, method: :delete
+        td = truncate("#{book.picture}", length: 30)
+        td = link_to t("show"), book
+        td = link_to t("edit"), edit_book_path(book)
+        td = link_to t("destroy"), book, data: { confirm: t("confirm") }, method: :delete
 
 br
 

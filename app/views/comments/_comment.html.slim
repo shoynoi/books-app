@@ -1,0 +1,11 @@
+.comment
+  .comment-body
+    = simple_format(h(comment.description), {}, sanitize: false)
+  footer.comment-footer
+    .comment-time
+      = l comment.updated_at
+    .comment-actions
+      => link_to t("edit"), edit_comment_path(comment)
+      '|
+      =< link_to t("destroy"), comment, data: { confirm: t("confirm") }, method: :delete
+

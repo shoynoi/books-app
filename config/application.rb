@@ -29,7 +29,8 @@ module BooksApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.available_locales = %i(ja en)
+    config.i18n.available_locales = %i(ja en)
     config.i18n.default_locale = :ja
+    config.time_zone = "Asia/Tokyo"
   end
 end

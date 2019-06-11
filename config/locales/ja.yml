@@ -1,5 +1,8 @@
 ---
 ja:
+  time:
+    formats:
+      default: "%Y年%m月%d日(%a) %H:%M"
   errors:
     messages:
       carrierwave_processing_error: 処理できませんでした
@@ -16,6 +19,8 @@ ja:
   activerecord:
     models:
       book: 書籍
+      report: 日報
+      comment: コメント
     attributes:
       book:
         id: ID
@@ -25,25 +30,46 @@ ja:
         picture: 画像
         created_at: 登録日時
         updated_at: 更新日時
+      report:
+        id: ID
+        title: タイトル
+        description: 内容
+        reported_on: 作業日
+        created_at: 登録日時
+        updated_at: 更新日時
+      comment:
+        id: ID
+        description: コメント
+        created_at: 投稿日時
+        updated_at: 更新日時
+  back: 戻る
+  show: 詳細
+  edit: 編集
+  destroy: 削除
+  confirm: 本当によろしいですか?
+  flash:
+    create: "%{resource}を作成しました"
+    update: "%{resource}を更新しました"
+    destroy: "%{resource}を削除しました"
   books:
-    back: 戻る
     index:
-      title: 書籍一覧
+      book_list: 書籍一覧
       new_book: 新規登録
-      destroy: 削除
-      edit: 編集
-      show: 詳細
-      confirm: "本当によろしいですか?"
     new:
       new_book: 書籍を登録
-    show:
-      edit: 編集
     edit:
       edit_book: 書籍の編集
-      show: 詳細
-    create:
-      notice: "書籍が保存されました"
-    update:
-      notice: "書籍が更新されました"
-    destroy:
-      notice: "書籍が削除されました"
+  reports:
+    index:
+      report_list: 日報一覧
+      new_report: 日報作成
+    new:
+      new_report: 日報作成
+    edit:
+      edit_report: 内容修正
+  comments:
+    comments: コメント
+    edit:
+      edit_comment: コメント編集
+    new:
+      new_comment: コメント投稿

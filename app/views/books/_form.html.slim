@@ -1,21 +1,15 @@
 = form_for @book do |f|
-  - if @book.errors.any?
-    #error_explanation
-      h2 = "#{t("errors.template.header.other", count: @book.errors.count, model: Book.model_name.human)}:"
-      ul
-        - @book.errors.full_messages.each do |message|
-          li = message
-
+  = render "error_messages", object: @book
   .field
-    = f.label Book.human_attribute_name(:title)
+    = f.label :title
     = f.text_field :title
   .field
-    = f.label Book.human_attribute_name(:memo)
+    = f.label :memo
     = f.text_area :memo
   .field
-    = f.label Book.human_attribute_name(:author)
+    = f.label :author
     = f.text_field :author
   .field
-    = f.label Book.human_attribute_name(:picture)
+    = f.label :picture
     = f.file_field :picture, id: :book_picture
   .actions = f.submit

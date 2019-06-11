@@ -46,7 +46,7 @@ div {
   }
 }
 
-#notice {
+.notice {
   color: green;
 }
 
@@ -81,4 +81,65 @@ div {
 
 label {
   display: block;
+}
+
+.wrapper {
+  width: 900px;
+}
+.comment {
+  border-bottom: solid 1px #9da4a7;
+  margin-bottom: 1rem;
+  padding-bottom: 0.2rem;
+  width: 500px;
+}
+
+.comment-body {
+  padding-left: 0.5rem;
+  word-break: break-word;
+}
+
+.comment-footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.comment-time {
+  color: #9da4a7;
+}
+
+.comment-actions {
+  padding-left: 0.5rem;
+}
+
+textarea {
+  padding: 0.3rem;
+  width: 500px;
+}
+
+.pagination_bottom {
+  margin-bottom: 1em;
+}
+
+.book-title, .book-memo, .book-author, .book-image {
+  margin-bottom: 0.7rem;
+}
+
+.report-title ,.report-reported_on,.report-description {
+  margin-bottom: 0.7rem;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.header-display-lang {
+  position: absolute;
+  right: 0;
+}
+
+.header-books {
+  margin-right: 0.5rem;
 }

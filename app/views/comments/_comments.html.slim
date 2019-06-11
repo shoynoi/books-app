@@ -1,0 +1,5 @@
+.comments
+  h2 = t("comments.comments")
+
+  = render partial: "comments/comment", collection: comments.order(:created_at), as: :comment
+  = render "comments/form", comment: comments.new
