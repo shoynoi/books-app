@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.eager_load(:user).page(params[:page])
+    @books = Book.page(params[:page])
   end
 
   # GET /books/1

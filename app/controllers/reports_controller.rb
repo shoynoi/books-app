@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
 
   # GET /reports
   def index
-    @reports = Report.eager_load(:user).page(params[:page])
+    @reports = Report.page(params[:page])
   end
 
   # GET /reports/1
