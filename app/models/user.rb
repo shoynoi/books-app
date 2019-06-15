@@ -42,6 +42,6 @@ class User < ApplicationRecord
   private
 
   def set_postcode
-    self.postcode = postcode1.present? && postcode2.present? ? [postcode1, postcode2].join("-") : nil
+    self.postcode = postcode1.present? || postcode2.present? ? [postcode1, postcode2].join("-") : nil
   end
 end
