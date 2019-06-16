@@ -8,6 +8,9 @@ h2 = t(".sign_up")
     = f.label :email
     = f.email_field :email, autocomplete: "email"
   .field
+    = f.label :avatar
+    = f.file_field :avatar
+  .field
     = f.label :postcode
     = f.text_field :postcode1, size: 3, maxlength: 3, id: "user_postcode", placeholder: "111"
     | -

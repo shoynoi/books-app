@@ -3,6 +3,7 @@ h1 = t ".book_list"
 table
   thead
     tr
+      th = User.human_attribute_name(:avatar)
       th = Book.human_attribute_name(:title)
       th = Book.human_attribute_name(:memo)
       th = Book.human_attribute_name(:author)
@@ -15,6 +16,7 @@ table
   tbody
     - @books.each do |book|
       tr
+        td = image_tag(book.user.avatar.variant(resize: "50x50")) if book.user.avatar.attached?
         td = book.title
         td = book.memo
         td = book.author

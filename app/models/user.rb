@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :reports, dependent: :destroy
   has_many :comments, dependent: :destroy
   paginates_per 10
+  has_one_attached :avatar
+  validate :avatar_validation
+
 
   def postcode1
     @postcode1 ||= postcode.present? ? postcode.split("-").first : nil
@@ -43,5 +46,17 @@ class User < ApplicationRecord
 
   def set_postcode
     self.postcode = postcode1.present? || postcode2.present? ? [postcode1, postcode2].join("-") : nil
+  end
+
+  def avatar_validation
+    if avatar.attached?
+      if avatar.blob.byte_size > 10.megabytes
+        avatar.purge
+        errors.add(:avatar, :max_size_error, max_size: "10MB")
+      elsif !avatar.blob.content_type.starts_with?("image/")
+        avatar.purge
+        errors.add(:avatar, :content_type_error)
+      end
+    end
   end
 end

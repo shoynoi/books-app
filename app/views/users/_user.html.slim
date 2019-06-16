@@ -1,4 +1,7 @@
 .user
-  .user-name = link_to user.name, user_path(user), class: "user-name-link"
-  div = user.email
-  p = truncate(user.biography, length: 200)
+  .user-image
+    = image_tag(user.avatar.variant(resize: "50x50")) if user.avatar.attached?
+  .user-info
+    .user-name = link_to user.name, user_path(user), class: "user-name-link"
+    div = user.email
+    p = truncate(user.biography, length: 200)
