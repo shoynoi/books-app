@@ -30,13 +30,7 @@ h2 = t(".title", resource: resource.model_name.human)
       em = t("devise.shared.minimum_password_length", count: @minimum_password_length)
   .field
     = f.label :password_confirmation
-    br
     = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    i = t(".we_need_your_current_password_to_confirm_your_changes")
-    br
-    = f.password_field :current_password, autocomplete: "current-password"
   .actions
     = f.submit t(".update")
 h3 = t(".cancel_my_account")
