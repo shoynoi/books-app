@@ -3,6 +3,9 @@ h1 = t(".profile")
 table
   tbody
     tr
+      th = User.human_attribute_name(:avatar)
+      td = image_tag(@user.avatar.variant(resize: "50x50")) if @user.avatar.attached?
+    tr
       th= User.human_attribute_name(:name)
       td= @user.name
     tr

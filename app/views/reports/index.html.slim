@@ -3,6 +3,7 @@ h1 = t(".report_list")
 table
   thead
     tr
+      th = User.human_attribute_name(:avatar)
       th = Report.human_attribute_name(:title)
       th = Report.human_attribute_name(:description)
       th = Report.human_attribute_name(:reported_on)
@@ -14,6 +15,7 @@ table
   tbody
     - @reports.each do |report|
       tr
+        td = image_tag(report.user.avatar.variant(resize: "50x50")) if report.user.avatar.attached?
         td = report.title
         td = truncate("#{report.description}", length: 50)
         td = report.reported_on

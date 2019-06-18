@@ -163,10 +163,26 @@ textarea {
 }
 
 .user {
+  display: flex;
+  align-items: center;
   flex: 0 0 33%;
   border-bottom: 1px solid #9da4a7;
   margin-right: 1rem;
   padding: 0.5rem 0;
+  width: auto;
+}
+
+.user-image {
+  width: 50px;
+}
+
+
+.form-avatar {
+  display: grid;
+}
+
+.user-info {
+  margin-left: 1rem;
 }
 
 .user-name {

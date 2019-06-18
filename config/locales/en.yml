@@ -3,6 +3,10 @@ en:
   time:
     formats:
       default: "%a, %d %b %Y %H:%M"
+  errors:
+    messages:
+      content_type_error: "is not a valid file format"
+      max_size_error: "File size should be greater than %{min_size}"
   activerecord:
     models:
       book: Book
@@ -31,6 +35,7 @@ en:
         updated_at: Updated at
       user:
         name: Name
+        avatar: Icon
         postcode: Postcode
         address: Address
         biography: Biography
