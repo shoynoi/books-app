@@ -6,7 +6,10 @@ Rails.application.routes.draw do
       registrations: "users/registrations",
       confirmations: "users/confirmations",
     }
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show] do
+      get "following" => "users/following#index"
+      get "followers" => "users/followers#index"
+    end
     resources :books
     resources :reports
     resources :comments, except: [:index, :show]
