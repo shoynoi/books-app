@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :books
     resources :reports
     resources :comments, except: [:index, :show]
+    resources :friendships, only: [:create, :destroy]
   end
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
