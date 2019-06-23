@@ -22,6 +22,7 @@ ja:
       book: 書籍
       report: 日報
       comment: コメント
+      friendship: フォロー
     attributes:
       book:
         id: ID
@@ -86,3 +87,20 @@ ja:
     show:
       profile: プロフィール
       edit: 登録情報変更
+    stats:
+      following: フォロー中
+      followers: フォロワー
+    following:
+      index:
+        following: フォロー一覧
+    followers:
+      index:
+        followers: フォロワー一覧
+    follow:
+      action: フォロー
+    unfollow:
+      action: フォロー解除
+  friendships:
+    flash:
+      create: フォローしました
+      destroy: フォロー解除しました

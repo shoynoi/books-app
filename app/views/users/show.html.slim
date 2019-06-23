@@ -7,7 +7,7 @@ table
       th = User.human_attribute_name(:avatar)
       td = image_tag(@user.avatar.variant(resize: "50x50")) if @user.avatar.attached?
     tr
-      th = "フォロー"
+      th = Friendship.model_name.human
       td = render "users/stats"
     tr
       th= User.human_attribute_name(:name)
