@@ -1,0 +1,5 @@
+- if user != current_user
+  - if current_user.following?(user)
+    = render partial: "users/unfollow", locals: { user: user }
+  - else
+    = render partial: "users/follow", locals: { user: user }

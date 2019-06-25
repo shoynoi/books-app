@@ -1,0 +1,2 @@
+= form_with model: current_user.active_relationships.find_by(followed_id: user.id), method: :delete, local: true do |f|
+  .actions = f.submit t(".action")

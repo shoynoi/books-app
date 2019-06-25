@@ -76,3 +76,20 @@ en:
     show:
       profile: Profile
       edit: Edit User
+    stats:
+      following: Following
+      followers: Followers
+    following:
+      index:
+        following: Following
+    followers:
+      index:
+        followers: Followers
+    follow:
+      action: Follow
+    unfollow:
+      action: Unfollow
+  friendships:
+    flash:
+      create: Followed.
+      destroy: Unfollowed.
