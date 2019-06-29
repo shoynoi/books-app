@@ -1,0 +1,13 @@
+bob:
+  name: Bob
+  email: bob@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  confirmed_at: <%= Time.now %>
+  uid: <%= User.create_unique_string %>
+
+alice:
+  name: Alice
+  email: alice@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  confirmed_at: <%= Time.now %>
+  uid: <%= User.create_unique_string %>
