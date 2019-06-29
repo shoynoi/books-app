@@ -1,0 +1,5 @@
+report:
+  title: Report Title
+  description: Report Description
+  reported_on: <%= Date.today %>
+  user: bob
