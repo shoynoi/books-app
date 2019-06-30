@@ -32,7 +32,7 @@ class UserTest < ActiveSupport::TestCase
     assert @alice.followers.include?(@bob)
   end
 
-  test"フォロー済みユーザーのフォロー解除ができる" do
+  test "フォロー済みユーザーのフォロー解除ができる" do
     @bob.follow(@alice)
     assert @bob.following?(@alice)
     @bob.unfollow(@alice)
