@@ -8,7 +8,7 @@ class OmniauthPagesTest < ApplicationSystemTestCase
   end
 
   test "GitHub連携でサインアップする" do
-    visit user_session_path(locale: :ja)
+    visit user_session_path
     assert_difference "User.count", 1 do
       click_link "GitHubでログイン"
       assert_text "GitHub アカウントによる認証に成功しました。"
@@ -16,7 +16,7 @@ class OmniauthPagesTest < ApplicationSystemTestCase
   end
 
   test "GitHub連携でサインインする" do
-    visit user_session_path(locale: :ja)
+    visit user_session_path
     click_link "GitHubでログイン"
     click_link "ログアウト"
     assert_no_difference "User.count" do

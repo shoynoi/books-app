@@ -7,7 +7,7 @@ class SessionsTest < ApplicationSystemTestCase
   end
 
   test "ログイン/ログアウトができる" do
-    visit user_session_path(locale: :ja)
+    visit user_session_path
     fill_in "Eメール", with: @user.email
     fill_in "パスワード", with: "password"
     click_button "ログイン"
@@ -17,7 +17,7 @@ class SessionsTest < ApplicationSystemTestCase
   end
 
   test "Eメールとパスワードが一致しないとログインできない" do
-    visit user_session_path(locale: :ja)
+    visit user_session_path
     fill_in "Eメール", with: "wrong@example.com"
     fill_in "パスワード", with: "wrongpass"
     click_button "ログイン"

@@ -3,7 +3,7 @@ require "application_system_test_case"
 class RegistrationsTest < ApplicationSystemTestCase
 
   test "ユーザー登録ができる" do
-    visit new_user_registration_path(locale: :ja)
+    visit new_user_registration_path
     fill_in "ユーザー名", with: "username"
     fill_in "Eメール", with: "user@example.com"
     fill_in "user[postcode1]", with: "123"
@@ -16,14 +16,14 @@ class RegistrationsTest < ApplicationSystemTestCase
     assert_text "本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。"
     user = User.last
     token = user.confirmation_token
-    visit user_confirmation_path(confirmation_token: token, locale: :ja)
+    visit user_confirmation_path(confirmation_token: token)
     assert_text "アカウントを登録しました。"
   end
 
   test "ユーザー編集ができる" do
     user = users(:bob)
     sign_in(user)
-    visit edit_user_registration_path(user, locale: :ja)
+    visit edit_user_registration_path
     fill_in "自己紹介", with: "自己紹介を更新しました"
     click_button "更新"
     assert_text "アカウント情報を変更しました。"
@@ -32,7 +32,7 @@ class RegistrationsTest < ApplicationSystemTestCase
   test "不正な値で更新はできない" do
     user = users(:bob)
     sign_in(user)
-    visit edit_user_registration_path(user, locale: :ja)
+    visit edit_user_registration_path
     fill_in "ユーザー名", with: ""
     fill_in "Eメール", with: ""
     fill_in "パスワード", with: "foo"

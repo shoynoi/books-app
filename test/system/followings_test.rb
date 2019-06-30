@@ -8,7 +8,7 @@ class FollowingsTest < ApplicationSystemTestCase
   end
 
   test "ユーザーをフォローできる" do
-    visit user_path(@other_user, locale: :ja)
+    visit user_path(@other_user)
     assert_difference "@user.following.count", 1 do
       click_button "フォロー"
       assert_text "フォローしました"
@@ -16,7 +16,7 @@ class FollowingsTest < ApplicationSystemTestCase
   end
 
   test "ユーザーをフォロー解除できる" do
-    visit user_path(@other_user, locale: :ja)
+    visit user_path(@other_user)
     click_button "フォロー"
     assert_difference "@user.following.count", -1 do
       click_button "フォロー解除"
@@ -25,9 +25,9 @@ class FollowingsTest < ApplicationSystemTestCase
   end
 
   test "フォロー一覧にフォローしたユーザーが表示されている" do
-    visit user_path(@other_user, locale: :ja)
+    visit user_path(@other_user)
     click_button "フォロー"
-    visit user_path(@user, locale: :ja)
+    visit user_path(@user)
     click_link "フォロー中"
     @user.following.each do |user|
       assert has_link?(user.name)
@@ -35,7 +35,7 @@ class FollowingsTest < ApplicationSystemTestCase
   end
 
   test "フォロワー一覧にフォローされているユーザーが表示されている" do
-    visit user_path(@other_user, locale: :ja)
+    visit user_path(@other_user)
     click_button "フォロー"
     click_link "フォロワー"
     @other_user.followers.each do |user|
