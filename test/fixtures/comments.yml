@@ -1,0 +1,4 @@
+comment:
+  description: Example Comment
+  commentable: report(Report)
+  user: bob
