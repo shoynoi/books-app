@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: /var/www/boos-app/shared/db/production.sqlite3
+  database: /var/www/books-app/shared/db/production.sqlite3
